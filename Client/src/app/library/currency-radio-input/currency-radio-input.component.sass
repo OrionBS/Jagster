@@ -1,0 +1,61 @@
+@import "src/assets/color"
+
+\:host
+  width: 100%
+  height: max-content
+
+  position: relative
+
+  display: flex
+  flex-flow: row nowrap
+  justify-content: center
+  align-items: center
+  gap: 1rem
+
+  input
+    -webkit-appearance: none
+    -moz-appearance: none
+    appearance: none
+
+    border-radius: 1rem
+    min-width: 1rem
+    min-height: 1rem
+
+    border: 2px solid $blue-light-100
+    transition: 0.2s all linear
+
+    position: relative
+
+    &:checked
+      border: 6px solid $blue-light-700
+
+
+  icon
+    font-size: 2rem
+    line-height: 2rem
+    font-weight: inherit
+    color: $blue-light-600
+
+  text-and-supporting-text
+    width: 100%
+    height: max-content
+
+    position: relative
+
+    display: flex
+    flex-flow: column nowrap
+    justify-content: flex-start
+    align-items: flex-start
+    gap: .5rem
+
+    text
+      font-size: 1.125rem
+      line-height: normal
+      font-weight: 600
+      color: $gray-700
+
+    supporting-text
+      font-size: 0.875rem
+      line-height: normal
+      font-weight: 400
+      color: $gray-500

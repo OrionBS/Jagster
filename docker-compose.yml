@@ -1,0 +1,88 @@
+version: "3.8"
+
+services:
+
+  discovery-service:
+    restart: unless-stopped
+    build:
+      context: Discovery
+      dockerfile: Dockerfile
+    image: jagster-discovery:latest
+    ports:
+      - "8761"
+    environment:
+      server.port: 8761
+      spring.application.name: discovery-service
+      eureka.instance.hostname: discovery-service
+      eureka.client.serviceUrl.defaultZone: http://admin:admin@discovery-service:8761/eureka/
+      eureka.client.register-with-eureka: true
+      eureka.client.fetch-registry: false
+      eureka.server.renewal-percent-threshold: 0.85
+
+  gateway-service:
+    restart: unless-stopped
+    build:
+      context: Gateway
+      dockerfile: Dockerfile
+    image: jagster-gateway:latest
+    ports:
+      - "8080:8080"
+    depends_on:
+      - discovery-service
+    environment:
+      server.port: 8080
+      spring.application.name: gateway-service
+      eureka.client.serviceUrl.defaultZone: http://admin:admin@discovery-service:8761/eureka/
+
+
+  transaction-mongodb:
+    image: mongo
+    restart: unless-stopped
+    environment:
+      MONGO_INITDB_DATABASE: transaction_database
+    volumes:
+      - ./mongo_transaction:/data/db
+    ports:
+      - "27017:27017"
+
+  transaction-service:
+    restart: unless-stopped
+    build:
+      context: Transaction
+      dockerfile: Dockerfile
+    image: jagster-transaction:latest
+    depends_on:
+      - transaction-mongodb
+      - discovery-service
+    environment:
+      server.port: 8080
+      spring.application.name: transaction-service
+      spring.data.mongodb.uri: mongodb://transaction-mongodb:27017/transaction_database
+      eureka.client.serviceUrl.defaultZone: http://admin:admin@discovery-service:8761/eureka/
+
+
+  account-mongodb:
+    image: mongo
+    restart: unless-stopped
+    environment:
+      mongo.initdb.database: account_database
+    volumes:
+      - ./mongo_account:/data/db
+    ports:
+      - "27018:27017"
+
+
+  account-service:
+    restart: unless-stopped
+    build:
+      context: Account
+      dockerfile: Dockerfile
+    image: jagster-account:latest
+    depends_on:
+      - transaction-mongodb
+      - discovery-service
+    environment:
+      server.port: 8080
+      spring.application.name: account-service
+      spring.data.mongodb.uri: mongodb://account-mongodb:27017/account_database
+      eureka.client.serviceUrl.defaultZone: http://admin:admin@discovery-service:8761/eureka/

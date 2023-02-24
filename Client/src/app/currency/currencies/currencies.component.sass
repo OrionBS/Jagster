@@ -1,0 +1,153 @@
+@import "src/assets/color"
+
+\:host
+  width: 100%
+  height: 100%
+  padding: 2rem 0
+
+  position: absolute
+  top: 0
+  left: 0
+
+  display: flex
+  flex-flow: row nowrap
+  justify-content: center
+  align-items: center
+
+  background: rgba(52, 64, 84, 0.7)
+  backdrop-filter: blur(8px)
+
+  modal
+    width: 400px
+    height: max-content
+    padding: 1.5rem
+
+    position: relative
+
+    display: flex
+    flex-flow: column nowrap
+    justify-content: flex-start
+    align-items: flex-start
+    gap: 1.25rem
+
+    background: $white
+    box-shadow: 0 20px 24px -4px rgba(16, 24, 40, 0.08), 0 8px 8px -4px rgba(16, 24, 40, 0.03)
+    border-radius: .75rem
+
+    header
+      width: 100%
+      height: max-content
+
+      position: relative
+
+      display: flex
+      flex-flow: row nowrap
+      justify-content: flex-start
+      align-items: center
+      gap: 1rem
+
+      text-and-supporting-text
+        width: 100%
+        height: max-content
+
+        position: relative
+
+        display: flex
+        flex-flow: column nowrap
+        justify-content: flex-start
+        align-items: flex-start
+        gap: .5rem
+
+        text
+          font-size: 1.125rem
+          line-height: normal
+          font-weight: 600
+          color: $gray-900
+
+        supporting-text
+          font-size: 0.875rem
+          line-height: normal
+          font-weight: 400
+          color: $gray-500
+
+      actions
+        width: max-content
+        height: max-content
+
+        position: relative
+
+        display: flex
+        flex-flow: row nowrap
+        justify-content: center
+        align-items: center
+        gap: .75rem
+
+    content
+      width: 100%
+      height: max-content
+
+      position: relative
+
+      display: flex
+      flex-flow: column nowrap
+      justify-content: flex-start
+      align-items: flex-start
+      gap: 0.75rem
+
+      section
+        width: 100%
+        height: max-content
+
+        position: relative
+
+        display: flex
+        flex-flow: row nowrap
+        justify-content: flex-start
+        align-items: center
+        gap: 1rem
+
+        span
+          font-size: 2rem
+          line-height: normal
+          font-weight: 600
+          color: $blue-light-600
+
+        text-and-supporting-text
+          width: 100%
+          height: max-content
+
+          position: relative
+
+          display: flex
+          flex-flow: column nowrap
+          justify-content: flex-start
+          align-items: flex-start
+
+          text
+            font-size: 0.875rem
+            line-height: normal
+            font-weight: 600
+            color: $gray-700
+
+          supporting-text
+            font-size: 0.875rem
+            line-height: normal
+            font-weight: 400
+            color: $gray-500
+
+
+
+
+
+
+    actions
+      width: 100%
+      height: max-content
+
+      position: relative
+
+      display: flex
+      flex-flow: row nowrap
+      justify-content: center
+      align-items: center
+      gap: .75rem

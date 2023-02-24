@@ -1,0 +1,42 @@
+<modal>
+  <header>
+    <text-and-supporting-text>
+      <text>Currencies</text>
+      <supporting-text>View each currency stored, and manage them as you need.</supporting-text>
+    </text-and-supporting-text>
+    <actions>
+      <app-button form="link" size="xxl" color="primary" type="button" prefixIcon="add"></app-button>
+    </actions>
+  </header>
+  <content>
+    <section *ngFor="let currency of currencies">
+      <span>{{currency.symbol}}</span>
+      <text-and-supporting-text>
+        <text>{{currency.name}}</text>
+        <supporting-text>{{currency.code}}</supporting-text>
+      </text-and-supporting-text>
+    </section>
+  </content>
+  <actions>
+    <app-button (click)="dialogRef.close()" form="classic" size="sm" color="primary" type="button" label="Cancel"></app-button>
+    <app-button form="classic" size="sm" color="primary" type="button" label="Confirm"></app-button>
+  </actions>
+</modal>
+
+<!--
+<header>
+
+  <actions>
+    <app-button (click)="postCurrency()" size="lg" form="classic" color="primary" prefixIcon="add" type="button"
+                label="Add"></app-button>
+  </actions>
+</header>
+<table>
+  <section *ngFor="let currency of currencies">
+    <p>{{currency.id}}</p>
+    <p>{{currency.name}}</p>
+    <p>{{currency.code}}</p>
+    <p>{{currency.symbol}}</p>
+  </section>
+</table>
+-->

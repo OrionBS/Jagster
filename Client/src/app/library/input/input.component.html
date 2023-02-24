@@ -1,0 +1,5 @@
+<label *ngIf="id && label" [for]="id">{{label}}</label>
+<input-group>
+  <input [formControl]="formControl" type="text" [placeholder]="placeholder">
+</input-group>
+<hint *ngIf="hint">{{hint}}</hint>

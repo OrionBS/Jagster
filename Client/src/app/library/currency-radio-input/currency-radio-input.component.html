@@ -1,0 +1,10 @@
+<input *ngIf="currency" type="radio"
+       [id]="currency.id"
+       [name]="name"
+       [value]="currency.id"
+       [formControl]="formControl">
+<icon *ngIf="currency">{{currency.symbol}}</icon>
+<text-and-supporting-text *ngIf="currency">
+  <text>{{currency.name}}</text>
+  <supporting-text>{{currency.code}}</supporting-text>
+</text-and-supporting-text>

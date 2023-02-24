@@ -1,0 +1,285 @@
+@import "src/assets/color"
+
+\:host
+  width: max-content
+  height: max-content
+
+  position: relative
+
+  display: flex
+  flex-flow: row nowrap
+  justify-content: center
+  align-items: center
+  gap: .5rem
+
+  border-radius: .5rem
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.05)
+  cursor: pointer
+
+  &.w-full
+    width: 100%
+
+  button
+    width: max-content
+    height: max-content
+    background: transparent
+    text-align: start
+    outline: none
+    cursor: pointer
+
+  &.sm
+    padding: .5rem .875rem
+
+    prefix-icon, suffix-icon
+      font-size: 1.25rem
+      line-height: 1.25rem
+      font-weight: inherit
+
+    button
+      font-size: .875rem
+      line-height: normal
+      font-weight: 600
+
+  &.md
+    padding: .5rem 1rem
+
+    prefix-icon, suffix-icon
+      font-size: 1.25rem
+      line-height: 1.25rem
+      font-weight: inherit
+
+    button
+      font-size: .875rem
+      line-height: normal
+      font-weight: 600
+
+  &.lg
+    padding: .5rem 1.125rem
+
+    prefix-icon, suffix-icon
+      font-size: 1.25rem
+      line-height: 1.25rem
+      font-weight: inherit
+
+    button
+      font-size: 1rem
+      line-height: normal
+      font-weight: 600
+
+  &.xl
+    padding: .75rem 1.25rem
+
+    prefix-icon, suffix-icon
+      font-size: 1.25rem
+      line-height: 1.25rem
+      font-weight: inherit
+
+    button
+      font-size: 1rem
+      line-height: normal
+      font-weight: 600
+
+  &.xxl
+    padding: 1rem 1.75rem
+
+    prefix-icon, suffix-icon
+      font-size: 1.5rem
+      line-height: 1.5rem
+      font-weight: inherit
+
+    button
+      font-size: 1.125rem
+      line-height: normal
+      font-weight: 600
+
+  &.classic
+
+    prefix-icon, button, suffix-icon
+      color: $white
+
+    &.primary
+      /*600
+      background: $blue-light-600
+      border: 1px solid $blue-light-600
+
+      &:focus-within
+        /*100
+        box-shadow: 0 0 0 4px $blue-light-100
+
+      &:hover
+        /*700a
+        background: $blue-light-700
+        border: 1px solid $blue-light-700
+
+    &.success
+      /*600
+      background: $success-600
+      border: 1px solid $success-600
+
+      &:focus-within
+        /*100
+        box-shadow: 0 0 0 4px $success-100
+
+      &:hover
+        /*700
+        background: $success-700
+        border: 1px solid $success-700
+
+    &.warning
+      /*600
+      background: $warning-600
+      border: 1px solid $warning-600
+
+      &:focus-within
+        /*100
+        box-shadow: 0 0 0 4px $warning-100
+
+      &:hover
+        /*700
+        background: $warning-700
+        border: 1px solid $warning-700
+
+    &.error
+      /*600
+      background: $error-600
+      border: 1px solid $error-600
+
+      &:focus-within
+        /*100
+        box-shadow: 0 0 0 4px $error-100
+
+      &:hover
+        /*700
+        background: $error-700
+        border: 1px solid $error-700
+
+    &.grayscale
+      /*500
+      background: $gray-500
+      border: 1px solid $gray-500
+
+      &:focus-within
+        /*50
+        box-shadow: 0 0 0 4px $gray-50
+
+      &:hover
+        /*600
+        background: $gray-600
+        border: 1px solid $gray-600
+
+  &.secondary
+
+
+  &.tertiary
+
+    box-shadow: none
+
+    &.primary
+
+      prefix-icon, button, suffix-icon
+        /*PRIMARY 700
+        color: $blue-light-700
+
+      &:hover
+        /*PRIMARY 50
+        background: $blue-light-50
+
+    &.success
+
+      prefix-icon, button, suffix-icon
+        /*SUCCESS 700
+        color: $success-700
+
+      &:hover
+        /*SUCCESS 50
+        background: $success-50
+
+    &.warning
+
+      prefix-icon, button, suffix-icon
+        /*WARNING 700
+        color: $warning-700
+
+      &:hover
+        /*WARNING 50
+        background: $warning-50
+
+    &.error
+
+      prefix-icon, button, suffix-icon
+        /*ERROR 700
+        color: $error-700
+
+      &:hover
+        /*ERROR 50
+        background: $error-50
+
+    &.grayscale
+
+      prefix-icon, button, suffix-icon
+        /*GRAYSCALE 700
+        color: $gray-600
+
+      &:hover
+        /*GRAYSCALE 50
+        background: $gray-25
+
+  &.link
+
+    box-shadow: none
+    padding: 0
+
+    &.primary
+
+      prefix-icon, button, suffix-icon
+        /*600
+        color: $blue-light-600
+
+      &:hover
+        /*700
+        color: $blue-light-700
+
+
+    &.success
+
+      prefix-icon, button, suffix-icon
+        /*600
+        color: $success-600
+
+      &:hover
+        /*700
+        color: $success-700
+
+    &.warning
+
+      prefix-icon, button, suffix-icon
+        /*600
+        color: $warning-600
+
+      &:hover
+        /*700
+        color: $warning-700
+
+    &.error
+
+      prefix-icon, button, suffix-icon
+        /*600
+        color: $error-600
+
+      &:hover
+        /*700
+        color: $error-700
+
+    &.grayscale
+
+      prefix-icon, button, suffix-icon
+        /*600
+        color: $gray-600
+
+      &:hover
+        /*700
+        color: $gray-700
+
+
+
+

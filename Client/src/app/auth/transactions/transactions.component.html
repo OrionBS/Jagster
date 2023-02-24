@@ -1,0 +1,32 @@
+<header>
+  <button class="w-fit sm tertiary grayscale" (click)="history.back()">
+    <icon class="material-symbols-rounded">keyboard_backspace</icon>
+  </button>
+  <text-and-supporting-text>
+    <text>Transactions</text>
+    <supporting-text>Every transactions associated to the account.</supporting-text>
+  </text-and-supporting-text>
+  <actions>
+    <button class="w-fit md classic primary" (click)="openTransactionForm()">
+      <text>Add</text>
+    </button>
+  </actions>
+</header>
+<content>
+  <section *ngFor="let transaction of transactions">
+    <icon class="material-symbols-rounded" *ngIf="categories">{{getCategoryById(transaction.categoryId)?.icon}}</icon>
+    <description-and-date>
+      <description>{{transaction.description}}</description>
+      <date>{{transaction.date | date:'mediumDate': 'GMT': 'en_EN'}}</date>
+    </description-and-date>
+    <amount>{{transaction.amount + ' ' + currency.symbol}}</amount>
+    <buttons>
+      <button class="w-fit sm tertiary primary" (click)="openTransactionForm()">
+        <text>Edit</text>
+      </button>
+      <button class="w-fit sm tertiary error" (click)="openTransactionForm()">
+        <text>Remove</text>
+      </button>
+    </buttons>
+  </section>
+</content>

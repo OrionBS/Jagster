@@ -1,0 +1,140 @@
+@import "src/assets/color"
+
+\:host
+  width: 100%
+  height: 100%
+  padding: 2rem
+
+  position: relative
+
+  display: flex
+  flex-flow: column nowrap
+  justify-content: flex-start
+  align-items: center
+  gap: 1.5rem
+
+  background-color: $gray-25
+
+  header
+    width: 1000px
+    height: max-content
+
+    position: relative
+
+    display: flex
+    flex-flow: row nowrap
+    justify-content: flex-start
+    align-items: center
+    gap: 1rem
+
+    text-and-supporting-text
+      width: 100%
+      height: max-content
+
+      position: relative
+
+      display: flex
+      flex-flow: column nowrap
+      justify-content: flex-start
+      align-items: flex-start
+      gap: .5rem
+
+      text
+        font-size: 1.875rem
+        line-height: normal
+        font-weight: 500
+        color: $gray-900
+
+      supporting-text
+        font-size: 1rem
+        line-height: normal
+        font-weight: 400
+        color: $gray-500
+
+    actions
+      width: max-content
+      height: max-content
+
+      position: relative
+
+      display: flex
+      flex-flow: row nowrap
+      justify-content: center
+      align-items: center
+      gap: .75rem
+
+  content
+    width: 1000px
+    height: max-content
+
+    position: relative
+
+    display: flex
+    flex-flow: column nowrap
+    justify-content: center
+    align-items: flex-start
+    gap: 0.75rem
+
+    section
+      width: 100%
+      height: max-content
+      padding: .5rem 1rem
+
+      position: relative
+
+      display: flex
+      flex-flow: row nowrap
+      justify-content: stretch
+      align-items: center
+      gap: .75rem
+
+      border-radius: .75rem
+      box-shadow: 0 1px 3px rgba(16, 24, 40, 0.1), 0 1px 2px rgba(16, 24, 40, 0.06)
+      background: $white
+
+      icon
+        font-size: 2rem
+        line-height: 2rem
+        font-weight: inherit
+        color: $blue-light-600
+
+      description-and-date
+        width: 100%
+        height: max-content
+
+        position: relative
+
+        display: flex
+        flex-flow: column nowrap
+        justify-content: center
+        align-items: flex-start
+
+        description
+          font-size: .875rem
+          line-height: normal
+          font-weight: 500
+          color: $gray-900
+
+        date
+          font-size: .875rem
+          line-height: normal
+          font-weight: 400
+          color: $gray-600
+
+      amount
+        min-width: max-content
+        font-size: .875rem
+        line-height: normal
+        font-weight: 400
+        color: $gray-600
+
+      buttons
+        width: max-content
+        height: max-content
+
+        position: relative
+
+        display: flex
+        flex-flow: row nowrap
+        justify-content: center
+        align-items: center

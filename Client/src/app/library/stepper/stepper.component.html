@@ -1,0 +1,6 @@
+<indicators>
+  <indicator *ngFor="let step of steps; let i = index" [ngClass]="step === selected ? 'selected' :''" (click)="selectStepByIndex(i)"></indicator>
+</indicators>
+
+<div [ngTemplateOutlet]="selected ? selected.content : null"></div>
+

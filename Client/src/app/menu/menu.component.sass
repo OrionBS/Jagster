@@ -1,0 +1,110 @@
+@import "src/assets/color"
+
+\:host
+  width: 100%
+  height: max-content
+  padding: 1rem 2rem
+
+  position: relative
+
+  display: flex
+  flex-flow: row nowrap
+  justify-content: flex-start
+  align-items: center
+  gap: 2rem
+
+  background: $white
+  border-bottom: 1px solid $gray-200
+
+  brand
+    width: max-content
+    height: max-content
+
+    position: relative
+
+    display: flex
+    flex-flow: row nowrap
+    justify-content: center
+    align-items: center
+    gap: .5rem
+
+    cursor: none
+
+    icon
+      font-size: 3rem
+      line-height: 1.5rem
+      font-weight: inherit
+      color: $blue-light-600
+
+    name
+      font-size: 1.25rem
+      line-height: normal
+      font-weight: 700
+      color: $blue-light-900
+
+  navigation
+    width: 100%
+    height: max-content
+
+    position: relative
+
+    display: flex
+    flex-flow: row nowrap
+    justify-content: flex-start
+    align-items: center
+    gap: .25rem
+
+    a
+      width: max-content
+      height: max-content
+      padding: .5rem .75rem
+
+      position: relative
+
+      font-size: 1rem
+      line-height: normal
+      font-weight: 500
+      color: $gray-700
+
+      &.active, &:hover, &:focus
+        border-radius: .375rem
+        background: $blue-light-50
+        color: $blue-light-700
+
+  actions
+    width: max-content
+    height: max-content
+
+    position: relative
+
+    display: flex
+    flex-flow: row nowrap
+    justify-content: flex-start
+    align-items: center
+    gap: .25rem
+
+    a
+      width: max-content
+      height: max-content
+      padding: .5rem
+
+      position: relative
+
+      font-size: 1.5rem
+      line-height: 1.5rem
+      font-weight: 500
+      color: $gray-700
+
+      &.active, &:hover, &:focus
+        border-radius: .375rem
+        background: $blue-light-50
+        color: $blue-light-700
+
+  img
+    width: 3rem
+    height: 3rem
+
+    position: relative
+
+    border-radius: 2rem
+

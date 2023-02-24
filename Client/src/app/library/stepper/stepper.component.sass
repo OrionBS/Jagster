@@ -1,0 +1,41 @@
+@import "src/assets/color"
+
+\:host
+  width: 100%
+  height: max-content
+
+  position: relative
+
+  display: flex
+  flex-flow: column nowrap
+  justify-content: stretch
+  align-items: stretch
+
+  indicators
+    width: 100%
+    height: max-content
+    padding-bottom: 1rem
+
+    position: relative
+
+    display: flex
+    flex-flow: row nowrap
+    justify-content: center
+    align-items: center
+    gap: .75rem
+
+
+    indicator
+      width: 1.5rem
+      height: .5rem
+
+      position: relative
+
+      border-radius: .5rem
+      background-color: $blue-light-100
+
+      &.completed
+        background-color: $blue-light-400
+
+      &.selected
+        background-color: $blue-light-700

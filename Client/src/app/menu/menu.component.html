@@ -1,0 +1,13 @@
+<brand>
+  <icon class="material-symbols-rounded">landscape</icon>
+  <name>Jagster</name>
+</brand>
+<navigation>
+  <a routerLink="dashboard" routerLinkActive="active">Dashboard</a>
+  <a routerLink="accounts" routerLinkActive="active">Accounts</a>
+</navigation>
+<actions>
+  <a class="material-symbols-rounded" routerLink="settings" routerLinkActive="active">settings</a>
+  <a class="material-symbols-rounded" (click)="googleService.revokeTokenId(router)">logout</a>
+</actions>
+<img *ngIf="idToken" [src]="idToken.picture" alt="Picture of the user.">

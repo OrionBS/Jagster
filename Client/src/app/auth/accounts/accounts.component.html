@@ -1,0 +1,36 @@
+<header>
+  <text-and-supporting-text>
+    <text>Accounts</text>
+    <supporting-text>View each account you registered, and manage them as you need.</supporting-text>
+  </text-and-supporting-text>
+  <actions>
+    <button class="w-fit md classic primary" (click)="openAccountForm()">
+      <text>Add</text>
+    </button>
+  </actions>
+</header>
+<content>
+  <section *ngFor="let account of accounts">
+    <header>
+      <icon>{{account.currency.symbol}}</icon>
+      <text-and-supporting-text>
+        <text>{{account.name}}</text>
+        <supporting-text>{{account.description}}</supporting-text>
+      </text-and-supporting-text>
+      <button class="w-fit md classic primary" [routerLink]="account.id.toString()">
+        <text>Open</text>
+      </button>
+      <button class="w-fit md secondary error" (click)="deleteAccount(account.id)">
+        <text>Delete</text>
+      </button>
+    </header>
+    <hr>
+    <content>
+      <variable>
+        <name>Current balance</name>
+        <value>{{account.initialAmount}} {{account.currency.symbol}}</value>
+      </variable>
+    </content>
+  </section>
+</content>
+

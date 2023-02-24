@@ -1,0 +1,15 @@
+<section>
+  <small (click)="updateYearDown()">{{today.subtract(1, 'year').get('year')}}</small>
+  <text>{{formGroup.get('year')?.getRawValue()}}</text>
+  <small (click)="updateYearUp()">{{today.add(1, 'year').get('year')}}</small>
+</section>
+<section>
+  <small (click)="updateMonthDown()">{{month[today.subtract(1, 'month').get('month')]}}</small>
+  <text>{{formGroup.get('month')?.getRawValue()}}</text>
+  <small (click)="updateMonthUp()">{{month[today.add(1, 'month').get('month')]}}</small>
+</section>
+<section>
+  <small (click)="updateDayDown()">{{today.subtract(1, 'day').get('date')}}</small>
+  <text>{{formGroup.get('day')?.getRawValue()}}</text>
+  <small (click)="updateDayUp()">{{today.add(1, 'day').get('date')}}</small>
+</section>

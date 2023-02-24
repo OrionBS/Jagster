@@ -1,0 +1,10 @@
+<input *ngIf="category" type="radio"
+       [id]="category.id"
+       [name]="name"
+       [value]="category.id"
+       [formControl]="formControl">
+<icon class="material-symbols-rounded" *ngIf="category.icon">{{category.icon}}</icon>
+<text-and-supporting-text *ngIf="category">
+  <text *ngIf="category.name">{{category.name}}</text>
+  <supporting-text *ngIf="category.description">{{category.description}}</supporting-text>
+</text-and-supporting-text>

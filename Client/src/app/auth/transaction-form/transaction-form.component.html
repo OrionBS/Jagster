@@ -1,0 +1,63 @@
+<form [formGroup]="formGroup">
+  <app-stepper>
+    <cdk-step>
+      <step>
+        <text-and-supporting-text>
+          <text>Transaction date</text>
+          <supporting-text>Choose the date when you've proceed to the transaction.</supporting-text>
+        </text-and-supporting-text>
+        <app-date-input formControlName="date"></app-date-input>
+        <buttons>
+          <button class="w-full md classic primary" [disabled]="formGroup.get('date')?.invalid" cdkStepperNext>
+            <text>Next</text>
+          </button>
+        </buttons>
+        <button class="w-full md tertiary error" (click)="dialogRef.close()">
+          <text>Cancel</text>
+        </button>
+      </step>
+    </cdk-step>
+    <cdk-step>
+      <step>
+        <text-and-supporting-text>
+          <text>Transaction category</text>
+          <supporting-text>Choose one category between each we manage.</supporting-text>
+        </text-and-supporting-text>
+        <app-category-radio-input *ngFor="let category of categories" formControlName="categoryId" [category]="category" name="category"></app-category-radio-input>
+        <buttons>
+          <button class="w-full md classic primary" cdkStepperPrevious>
+            <text>Previous</text>
+          </button>
+          <button class="w-full md classic primary" [disabled]="formGroup.get('categoryId')?.invalid" cdkStepperNext>
+            <text>Next</text>
+          </button>
+        </buttons>
+        <button class="w-full md tertiary error" (click)="dialogRef.close()">
+          <text>Cancel</text>
+        </button>
+      </step>
+    </cdk-step>
+    <cdk-step>
+      <step>
+        <text-and-supporting-text>
+          <text>Account description and amount</text>
+          <supporting-text>You can add a short description and also specify the amount of the transaction.</supporting-text>
+        </text-and-supporting-text>
+        <app-input formControlName="description" id="description" label="Description" placeholder="Supermarket"></app-input>
+        <app-input formControlName="amount" id="amount" label="Amount"></app-input>
+        <buttons>
+          <button class="w-full md classic primary" cdkStepperPrevious>
+            <text>Previous</text>
+          </button>
+          <button class="w-full md classic primary" [disabled]="formGroup.invalid"
+                  (click)="submitTransactionForm(formGroup)">
+            <text>Confirm</text>
+          </button>
+        </buttons>
+        <button class="w-full md tertiary error" (click)="dialogRef.close()">
+          <text>Cancel</text>
+        </button>
+      </step>
+    </cdk-step>
+  </app-stepper>
+</form>

@@ -1,0 +1,54 @@
+<header *ngIf="account">
+  <button class="w-fit sm tertiary grayscale" (click)="history.back()">
+    <icon class="material-symbols-rounded">keyboard_backspace</icon>
+  </button>
+  <text-and-supporting-text *ngIf="account">
+    <text *ngIf="account.name">{{account.name}}</text>
+    <supporting-text *ngIf="account.description">{{account.description}}</supporting-text>
+  </text-and-supporting-text>
+  <actions>
+    <button class="w-fit md classic primary">
+      <text>Edit</text>
+    </button>
+  </actions>
+</header>
+<content *ngIf="account">
+  <section>
+    <header>
+      <text-and-supporting-text>
+        <text>Last transactions</text>
+        <supporting-text>Your ten last added transactions quick view.</supporting-text>
+      </text-and-supporting-text>
+      <actions>
+        <button class="w-fit sm secondary primary" routerLink="transactions">
+          <text>Open</text>
+        </button>
+      </actions>
+    </header>
+    <hr>
+    <content *ngIf="account.transactions">
+      <transaction *ngFor="let transaction of account.transactions">
+        <icon class="material-symbols-rounded">{{transaction.categoryIcon}}</icon>
+        <description-and-date>
+          <description>{{transaction.description}}</description>
+          <date>{{transaction.date | date}}</date>
+        </description-and-date>
+        <amount>{{transaction.amount + ' ' + account.currencySymbol}}</amount>
+      </transaction>
+    </content>
+  </section>
+  <section>
+    <header>
+      <text-and-supporting-text>
+        <text>Budget status</text>
+        <supporting-text>Your budget status </supporting-text>
+      </text-and-supporting-text>
+      <actions>
+        <button class="w-fit sm secondary primary">
+          <text>Open</text>
+        </button>
+      </actions>
+    </header>
+    <hr>
+  </section>
+</content>

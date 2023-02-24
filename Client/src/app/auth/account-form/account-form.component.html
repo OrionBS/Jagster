@@ -1,0 +1,66 @@
+<form [formGroup]="formGroup">
+  <app-stepper>
+    <cdk-step>
+      <step>
+        <text-and-supporting-text>
+          <text>Account details</text>
+          <supporting-text>Details of the account like his name and description.</supporting-text>
+        </text-and-supporting-text>
+        <app-input formControlName="name" id="name" placeholder="Wall street bank" label="Name"></app-input>
+        <app-input formControlName="description" id="description"
+                   placeholder="Description of the wall street bank account" label="Description"></app-input>
+        <buttons>
+          <button class="w-full md classic primary"
+                  [disabled]="formGroup.get('name')?.invalid || formGroup.get('description')?.invalid" cdkStepperNext>
+            <text>Next</text>
+          </button>
+        </buttons>
+        <button class="w-full md tertiary error" (click)="dialogRef.close()">
+          <text>Cancel</text>
+        </button>
+      </step>
+    </cdk-step>
+    <cdk-step>
+      <step>
+        <text-and-supporting-text>
+          <text>Account currency</text>
+          <supporting-text>Choose one currency between each we manage.</supporting-text>
+        </text-and-supporting-text>
+        <app-currency-radio-input *ngFor="let currency of currencies" formControlName="currencyId" [currency]="currency"
+                                  name="currency"></app-currency-radio-input>
+        <buttons>
+          <button class="w-full md classic primary" cdkStepperPrevious>
+            <text>Previous</text>
+          </button>
+          <button class="w-full md classic primary" [disabled]="formGroup.get('currency')?.invalid" cdkStepperNext>
+            <text>Next</text>
+          </button>
+        </buttons>
+        <button class="w-full md tertiary error" (click)="dialogRef.close()">
+          <text>Cancel</text>
+        </button>
+      </step>
+    </cdk-step>
+    <cdk-step>
+      <step>
+        <text-and-supporting-text>
+          <text>Account initial amount</text>
+          <supporting-text>In case, you not starting from zero, you can specify an initial amount.</supporting-text>
+        </text-and-supporting-text>
+        <app-input formControlName="initialAmount" id="initialAmount" label="Initial amount"></app-input>
+        <buttons>
+          <button class="w-full md classic primary" cdkStepperPrevious>
+            <text>Previous</text>
+          </button>
+          <button class="w-full md classic primary" [disabled]="formGroup.invalid"
+                  (click)="submitAccountForm(formGroup)">
+            <text>Confirm</text>
+          </button>
+        </buttons>
+        <button class="w-full md tertiary error" (click)="dialogRef.close()">
+          <text>Cancel</text>
+        </button>
+      </step>
+    </cdk-step>
+  </app-stepper>
+</form>
