@@ -8,6 +8,7 @@ import net.jagster.financial.entity.Currency;
 import net.jagster.financial.entity.Transaction;
 import net.jagster.financial.exception.ConflictAccountException;
 import net.jagster.financial.exception.UnknownAccountException;
+import net.jagster.financial.exception.UnknownCurrencyException;
 import net.jagster.financial.exception.UnknownTransactionException;
 import net.jagster.financial.dto.request.AccountRequest;
 import net.jagster.financial.mapper.AccountMapper;
@@ -17,7 +18,6 @@ import net.jagster.financial.repository.CurrencyRepository;
 import net.jagster.financial.repository.TransactionRepository;
 import net.jagster.financial.service.AccountService;
 import net.jagster.financial.util.JwtUtil;
-import net.jagster.library.exception.UnknownCurrencyException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

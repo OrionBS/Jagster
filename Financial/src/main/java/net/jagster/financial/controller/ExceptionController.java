@@ -1,8 +1,6 @@
 package net.jagster.financial.controller;
 
 import net.jagster.financial.exception.*;
-import net.jagster.library.exception.ConflictCurrencyException;
-import net.jagster.library.exception.UnknownCurrencyException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
