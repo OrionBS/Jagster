@@ -2,12 +2,11 @@ import {Component, Inject, inject, OnDestroy, OnInit} from '@angular/core';
 import {DIALOG_DATA, DialogRef} from "@angular/cdk/dialog";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {AccountService} from "../../services/account.service";
-import {iif, map, mergeMap, Observable, of, Subscription, switchMap, tap} from "rxjs";
+import {mergeMap, of, Subscription} from "rxjs";
 import {AccountModel} from "../../models/AccountModel";
 
 import {CurrencyModel} from "../../models/CurrencyModel";
 import {CurrencyService} from "../../services/currency.service";
-import {animate} from "@angular/animations";
 
 @Component({
   selector: 'app-account-form',
@@ -53,15 +52,15 @@ export class AccountFormComponent implements OnInit, OnDestroy {
   }
 
   submitAccountForm(formGroup: FormGroup) {
-    if (formGroup.get('id')?.value) {
+    const accountId: number = formGroup.get('id')?.value
+    if (!accountId) {
       this.subscription.add(
         of(formGroup).pipe(
           mergeMap((value) => {
             console.table(value.value)
             return this.accountService.insertAccount({
               name: value.get('name')?.value,
-              description: value.get('description')?.value,
-              initialAmount: value.get('initialAmount')?.value
+              description: value.get('description')?.value
             })
           }),
           mergeMap((accountWithId) => {
@@ -78,10 +77,9 @@ export class AccountFormComponent implements OnInit, OnDestroy {
         of(formGroup).pipe(
           mergeMap((value) => {
             console.table(value.value)
-            return this.accountService.updateAccount({
+            return this.accountService.updateAccount(accountId, {
               name: value.get('name')?.value,
-              description: value.get('description')?.value,
-              initialAmount: value.get('initialAmount')?.value
+              description: value.get('description')?.value
             })
           }),
           mergeMap((accountWithId) => {

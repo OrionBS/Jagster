@@ -23,7 +23,6 @@ public class Account {
     private String userId;
     private String name;
     private String description;
-    private BigDecimal initialAmount;
     @ManyToOne(cascade = {CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH}, fetch = FetchType.LAZY)
     @JoinColumn(name = "currency_id")
     private Currency currency;

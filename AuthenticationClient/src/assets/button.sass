@@ -1,0 +1,483 @@
+@import "src/assets/color"
+
+button
+
+  &.w-fit
+    width: max-content
+
+  &.w-full
+    width: 100%
+
+  height: max-content
+
+  position: relative
+
+  display: flex
+  flex-flow: row nowrap
+  justify-content: center
+  align-items: center
+
+  background: transparent
+  text-align: start
+  outline: none
+  cursor: pointer
+
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.05)
+  border-radius: .5rem
+
+  &.sm
+    padding: .5rem .875rem
+    gap: .5rem
+
+    icon
+      font-size: 1.25rem
+      line-height: 1.25rem
+      font-weight: inherit
+
+    text
+      font-size: .875rem
+      line-height: normal
+      font-weight: 600
+
+  &.md
+    padding: .5rem 1rem
+    gap: .5rem
+
+    icon
+      font-size: 1.25rem
+      line-height: 1.25rem
+      font-weight: inherit
+
+    text
+      font-size: .875rem
+      line-height: normal
+      font-weight: 600
+
+  &.lg
+    padding: .5rem 1.125rem
+    gap: .5rem
+
+    icon
+      font-size: 1.25rem
+      line-height: 1.25rem
+      font-weight: inherit
+
+    text
+      font-size: 1rem
+      line-height: normal
+      font-weight: 600
+
+  &.xl
+    padding: .75rem 1.25rem
+    gap: .5rem
+
+    icon
+      font-size: 1.25rem
+      line-height: 1.25rem
+      font-weight: inherit
+
+    text
+      font-size: 1rem
+      line-height: normal
+      font-weight: 600
+
+  &.xxl
+    padding: 1rem 1.75rem
+    gap: .75rem
+
+    icon
+      font-size: 1.5rem
+      line-height: 1.5rem
+      font-weight: inherit
+
+    text
+      font-size: 1.125rem
+      line-height: normal
+      font-weight: 600
+
+  &.classic
+
+    icon, text
+      color: $white
+
+    &.primary
+      /*600
+      background: $blue-light-600
+      border: 1px solid $blue-light-600
+
+      &:focus
+        /*100
+        box-shadow: 0 0 0 4px $blue-light-100
+
+      &:hover
+        /*700
+        background: $blue-light-700
+        border: 1px solid $blue-light-700
+
+      &:disabled
+        /*200
+        background: $blue-light-200
+        border: 1px solid $blue-light-200
+
+    &.success
+      /*600
+      background: $success-600
+      border: 1px solid $success-600
+
+      &:focus-within
+        /*100
+        box-shadow: 0 0 0 4px $success-100
+
+      &:hover
+        /*700
+        background: $success-700
+        border: 1px solid $success-700
+
+      &:disabled
+        /*200
+        background: $success-200
+        border: 1px solid $success-200
+
+    &.warning
+      /*600
+      background: $warning-600
+      border: 1px solid $warning-600
+
+      &:focus-within
+        /*100
+        box-shadow: 0 0 0 4px $warning-100
+
+      &:hover
+        /*700
+        background: $warning-700
+        border: 1px solid $warning-700
+
+      &:disabled
+        /*200
+        background: $warning-200
+        border: 1px solid $warning-200
+
+    &.error
+      /*600
+      background: $error-600
+      border: 1px solid $error-600
+
+      &:focus-within
+        /*100
+        box-shadow: 0 0 0 4px $error-100
+
+      &:hover
+        /*700
+        background: $error-700
+        border: 1px solid $error-700
+
+      &:disabled
+        /*200
+        background: $error-200
+        border: 1px solid $error-200
+
+    &.grayscale
+      /*500
+      background: $gray-500
+      border: 1px solid $gray-500
+
+      &:focus-within
+        /*50
+        box-shadow: 0 0 0 4px $gray-50
+
+      &:hover
+        /*600
+        background: $gray-600
+        border: 1px solid $gray-600
+
+      &:disabled
+        /*200
+        background: $gray-200
+        border: 1px solid $gray-200
+
+  &.secondary
+
+    &.primary
+      /*50
+      background: $blue-light-50
+      border: 1px solid $blue-light-50
+
+      icon, text
+        /*700
+        color: $blue-light-700
+
+      &:hover
+        /*100
+        background: $blue-light-100
+        border: 1px solid $blue-light-100
+
+      &:focus
+        /*100
+        box-shadow: 0 0 0 4px $blue-light-100
+
+      &:disabled
+        /*200
+        background: $blue-light-25
+        border: 1px solid $blue-light-25
+
+        icon, text
+          /*700
+          color: $blue-light-300
+
+    &.success
+      /*50
+      background: $success-50
+      border: 1px solid $success-50
+
+      icon, text
+        /*700
+        color: $success-700
+
+      &:hover
+        /*100
+        background: $success-100
+        border: 1px solid $success-100
+
+      &:focus
+        /*100
+        box-shadow: 0 0 0 4px $success-100
+
+      &:disabled
+        /*200
+        background: $success-25
+        border: 1px solid $success-25
+
+        icon, text
+          /*700
+          color: $success-300
+
+    &.warning
+      /*50
+      background: $warning-50
+      border: 1px solid $warning-50
+
+      icon, text
+        /*700
+        color: $warning-700
+
+      &:hover
+        /*100
+        background: $warning-100
+        border: 1px solid $warning-100
+
+      &:focus
+        /*100
+        box-shadow: 0 0 0 4px $warning-100
+
+      &:disabled
+        /*200
+        background: $warning-25
+        border: 1px solid $warning-25
+
+        icon, text
+          /*700
+          color: $warning-300
+
+    &.error
+      /*50
+      background: $error-50
+      border: 1px solid $error-50
+
+      icon, text
+        /*700
+        color: $error-700
+
+      &:hover
+        /*100
+        background: $error-100
+        border: 1px solid $error-100
+
+      &:focus
+        /*100
+        box-shadow: 0 0 0 4px $error-100
+
+      &:disabled
+        /*200
+        background: $error-25
+        border: 1px solid $error-25
+
+        icon, text
+          /*700
+          color: $error-300
+
+    &.grayscale
+      /*50
+      background: $gray-50
+      border: 1px solid $gray-50
+
+      icon, text
+        /*700
+        color: $gray-700
+
+      &:hover
+        /*100
+        background: $gray-100
+        border: 1px solid $gray-100
+
+      &:focus
+        /*100
+        box-shadow: 0 0 0 4px $gray-100
+
+      &:disabled
+        /*200
+        background: $gray-25
+        border: 1px solid $gray-25
+
+        icon, text
+          /*700
+          color: $gray-300
+
+  &.tertiary
+
+    box-shadow: none
+
+    &.primary
+
+      icon, text
+        /* 700
+        color: $blue-light-700
+
+      &:hover
+        /* 50
+        background: $blue-light-50
+
+      &:disabled
+        /* GRAY 300
+        color: $gray-300
+
+    &.success
+
+      icon, text
+        /*SUCCESS 700
+        color: $success-700
+
+      &:hover
+        /*SUCCESS 50
+        background: $success-50
+
+      &:disabled
+        /* GRAY 300
+        color: $gray-300
+
+    &.warning
+
+      icon, text
+        /*WARNING 700
+        color: $warning-700
+
+      &:hover
+        /*WARNING 50
+        background: $warning-50
+
+      &:disabled
+        /* GRAY 300
+        color: $gray-300
+
+    &.error
+
+      icon, text
+        /*ERROR 700
+        color: $error-700
+
+      &:hover
+        /*ERROR 50
+        background: $error-50
+
+      &:disabled
+        /* GRAY 300
+        color: $gray-300
+
+    &.grayscale
+
+      icon, text
+        /*GRAYSCALE 700
+        color: $gray-700
+
+      &:hover
+        /*GRAYSCALE 50
+        background: $gray-50
+
+      &:disabled
+        /* GRAY 300
+        color: $gray-300
+
+  &.link
+
+    box-shadow: none
+    padding: 0
+
+    &.primary
+
+      icon, text
+        /*600
+        color: $blue-light-600
+
+      &:hover
+        /*700
+        color: $blue-light-700
+
+      &:disabled
+        /* GRAY 300
+        color: $gray-300
+
+
+    &.success
+
+      icon, text
+        /*600
+        color: $success-600
+
+      &:hover
+        /*700
+        color: $success-700
+
+      &:disabled
+        /* GRAY 300
+        color: $gray-300
+
+    &.warning
+
+      icon, text
+        /*600
+        color: $warning-600
+
+      &:hover
+        /*700
+        color: $warning-700
+
+      &:disabled
+        /* GRAY 300
+        color: $gray-300
+
+    &.error
+
+      icon, text
+        /*600
+        color: $error-600
+
+      &:hover
+        /*700
+        color: $error-700
+
+      &:disabled
+        /* GRAY 300
+        color: $gray-300
+
+    &.grayscale
+
+      icon, text
+        /*600
+        color: $gray-600
+
+      &:hover
+        /*700
+        color: $gray-700
+
+      &:disabled
+        /* GRAY 300
+        color: $gray-300

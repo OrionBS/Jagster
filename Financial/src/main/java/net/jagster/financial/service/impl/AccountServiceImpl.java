@@ -73,7 +73,6 @@ public class AccountServiceImpl implements AccountService {
         account.setUserId(JwtUtil.getSubject());
         account.setName(accountRequest.getName());
         account.setDescription(accountRequest.getDescription());
-        account.setInitialAmount(accountRequest.getInitialAmount());
         return accountRepository.save(account);
     }
 
@@ -90,7 +89,6 @@ public class AccountServiceImpl implements AccountService {
         });
         account.setName(accountRequest.getName());
         account.setDescription(accountRequest.getDescription());
-        account.setInitialAmount(accountRequest.getInitialAmount());
         return accountRepository.save(account);
     }
 

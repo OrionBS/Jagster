@@ -1,0 +1,30 @@
+<form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+  <header>
+    <text>Log in to your account</text>
+    <supporting-text>Welcome back! Please enter your details.</supporting-text>
+  </header>
+  <section>
+    <fieldset>
+      <label for="email">Email</label>
+      <input id="email" type="text" placeholder="Enter your email">
+    </fieldset>
+    <fieldset>
+      <label for="password">Password</label>
+      <input id="password" type="password" placeholder="Enter your password">
+    </fieldset>
+    <button type="submit" class="w-full lg classic primary">
+      <text>Sign in</text>
+    </button>
+    <button type="button" class="w-full lg secondary grayscale">
+      <text>Sign in with google</text>
+    </button>
+  </section>
+  <footer>
+    <button type="button" class="w-fit sm link primary">
+      <text>Sign up</text>
+    </button>
+    <button type="button" class="w-fit sm link primary">
+      <text>Forgot password</text>
+    </button>
+  </footer>
+</form>

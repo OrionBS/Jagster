@@ -14,6 +14,4 @@ public class AccountRequest {
     private String name;
     @NotBlank
     private String description;
-    @NotNull
-    private BigDecimal initialAmount;
 }

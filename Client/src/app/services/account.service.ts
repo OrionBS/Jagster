@@ -15,7 +15,7 @@ export class AccountService {
     return this.httpClient.get<AccountModel[]>(this.url, {withCredentials: true})
   }
 
-  public insertAccount(account: { name: string, description: string, initialAmount: number }): Observable<{ id: number }> {
+  public insertAccount(account: { name: string, description: string }): Observable<{ id: number }> {
     return this.httpClient.post<{ id: number }>(this.url, account, {withCredentials: true})
   }
 
@@ -23,7 +23,7 @@ export class AccountService {
     return this.httpClient.get<AccountModel>(this.url + '/' + accountId, {withCredentials: true})
   }
 
-  public updateAccount(accountId: number, account: AccountModel): Observable<AccountModel> {
+  public updateAccount(accountId: number, account: { name: string, description: string }): Observable<AccountModel> {
     return this.httpClient.put<AccountModel>(this.url + '/' + accountId, account, {withCredentials: true})
   }
 

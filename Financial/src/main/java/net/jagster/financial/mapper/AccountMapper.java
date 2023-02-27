@@ -13,7 +13,6 @@ public class AccountMapper {
                 .id(account.getId())
                 .name(account.getName())
                 .description(account.getDescription())
-                .initialAmount(account.getInitialAmount())
                 .currencyId(account.getCurrency() != null ? account.getCurrency().getId() : null)
                 .transactionIds(account.getTransactions().stream().map(Transaction::getId).collect(Collectors.toList()))
                 .build();
