@@ -1,1 +1,26 @@
-<p>dashboard works!</p>
+<ng-container *ngIf="data$ | async as data">
+  <ng-container *ngIf="data.user as user">
+    <section>
+      <p>{{user.id}}</p>
+      <p>{{user.firstName}}</p>
+      <p>{{user.lastName}}</p>
+      <p>{{user.email}}</p>
+      <p>{{user.picture}}</p>
+    </section>
+  </ng-container>
+  <ng-container *ngIf="data.accounts as accounts">
+    <section *ngFor="let account of accounts">
+      <p>{{account.id}}</p>
+      <p>{{account.name}}</p>
+      <p>{{account.description}}</p>
+      <p>{{account.currencyId}}</p>
+    </section>
+  </ng-container>
+  <ng-container *ngIf="data.categories as categories">
+    <section *ngFor="let category of categories">
+      <p>{{category.id}}</p>
+      <p>{{category.name}}</p>
+      <icon class="material-symbols-rounded">{{category.icon}}</icon>
+    </section>
+  </ng-container>
+</ng-container>

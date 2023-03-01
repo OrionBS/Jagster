@@ -7,15 +7,11 @@ import {DashboardComponent} from './auth/dashboard/dashboard.component';
 import {AuthComponent} from './auth/auth.component';
 import {LoadingComponent} from './loading/loading.component';
 import {CdkMenu, CdkMenuItem, CdkMenuTrigger} from "@angular/cdk/menu";
+import { TransactionsComponent } from './auth/dashboard/transactions/transactions.component';
+import { TransactionComponent } from './auth/dashboard/transaction/transaction.component';
 
 const routes: Routes = [
-  {path: '', component: LoadingComponent},
-  {
-    path: 'auth', component: AuthComponent, children: [
-      {path: 'dashboard', component: DashboardComponent},
-      {path: '**', redirectTo: 'dashboard', pathMatch: 'full'}
-    ]
-  },
+  {path: '', component: DashboardComponent},
   {path: '**', redirectTo: '', pathMatch: 'full'}
 ];
 
@@ -24,7 +20,9 @@ const routes: Routes = [
     AppComponent,
     DashboardComponent,
     AuthComponent,
-    LoadingComponent
+    LoadingComponent,
+    TransactionsComponent,
+    TransactionComponent
   ],
   imports: [
     BrowserModule,
